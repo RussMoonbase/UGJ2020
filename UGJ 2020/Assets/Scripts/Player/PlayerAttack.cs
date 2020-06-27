@@ -5,8 +5,12 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
    public string punchButtonString;
+   public float hitLevelIncreaseSpeed;
 
    [SerializeField] private Animator _animator; // loaded in Inspector
+   [SerializeField] private float _hitLevelMax;
+   private float _hitLevel = 0f;
+   private bool _isPunchButtonPressed = false;
 
    // Start is called before the first frame update
    void Start()
@@ -17,9 +21,38 @@ public class PlayerAttack : MonoBehaviour
    // Update is called once per frame
    void Update()
    {
-      if (Input.GetButtonDown(punchButtonString))
+      if (Input.GetButton(punchButtonString))
       {
-         Attack();
+         _isPunchButtonPressed = true;
+      }
+
+      if (Input.GetButtonUp(punchButtonString))
+      {
+         _isPunchButtonPressed = false;  
+
+         if (_hitLevel >= _hitLevelMax)
+         {
+            Attack();
+         }
+      }
+
+      PressingPunchButton();
+
+      Debug.Log("Hit Level = " + _hitLevel);
+   }
+
+   private void PressingPunchButton()
+   {
+      if (_isPunchButtonPressed)
+      {
+         _hitLevel += hitLevelIncreaseSpeed;
+      }
+      else
+      {
+         if (_hitLevel > 0.1f)
+         {
+            _hitLevel -= (hitLevelIncreaseSpeed / 2);
+         }
       }
    }
 
