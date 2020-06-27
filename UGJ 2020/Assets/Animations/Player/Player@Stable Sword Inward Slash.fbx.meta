@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 20139c9fe8c401c4a8f806a218e58279
+guid: b3ec5b3e764eae14fa2eb092f5c83054
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Sword And Shield Slash
+    second: Stable Sword Inward Slash
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Sword And Shield Slash
+      name: Stable Sword Inward Slash
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 45
+      lastFrame: 69
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
