@@ -47,7 +47,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: 325bf527d9a9e2c409681e4e10ce254f,
       type: 3}
     m_Threshold: 0.2
-    m_Position: {x: 0, y: 0}
+    m_Position: {x: 0.2, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: LeftStickVert_Input
@@ -56,18 +56,72 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: aaec0c33fb65b3144a1efd4511135003,
       type: 3}
     m_Threshold: 1
-    m_Position: {x: 0, y: 0}
+    m_Position: {x: 1, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: LeftStickVert_Input
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: -203655887218126122, guid: c5b85399945f3d140acc858b754e29db,
+      type: 3}
+    m_Threshold: 1.8
+    m_Position: {x: -0.2, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: LeftStickVert_Input
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: -203655887218126122, guid: 4dce80c396be2bf489c86b3e156c4f60,
+      type: 3}
+    m_Threshold: 2.6
+    m_Position: {x: -1, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: LeftStickVert_Input
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: -203655887218126122, guid: abaf2b4791bdb0347a54bbb1482ec349,
+      type: 3}
+    m_Threshold: 3.3999999
+    m_Position: {x: 0, y: -0.1}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: LeftStickVert_Input
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: -203655887218126122, guid: 90e7df24cebb107478171c86b71b18b1,
+      type: 3}
+    m_Threshold: 4.2
+    m_Position: {x: 0, y: -1}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: LeftStickVert_Input
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: -203655887218126122, guid: 1902c85dfd4072e46a8032e8a7d51c98,
+      type: 3}
+    m_Threshold: 5
+    m_Position: {x: 0, y: 0.1}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: LeftStickVert_Input
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: -203655887218126122, guid: c0893928dd939d44fa2acb484a452b4d,
+      type: 3}
+    m_Threshold: 5.8
+    m_Position: {x: 0, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: LeftStickVert_Input
     m_Mirror: 0
   m_BlendParameter: LeftStickVert_Input
-  m_BlendParameterY: Blend
+  m_BlendParameterY: LeftStickHor_Input
   m_MinThreshold: 0
-  m_MaxThreshold: 1
+  m_MaxThreshold: 5.8
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
-  m_BlendType: 0
+  m_BlendType: 3
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -78,6 +132,12 @@ AnimatorController:
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: LeftStickVert_Input
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: LeftStickHor_Input
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
