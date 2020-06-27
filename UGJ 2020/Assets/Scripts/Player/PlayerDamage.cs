@@ -65,4 +65,32 @@ public class PlayerDamage : MonoBehaviour
       }
    }
 
+   public void DeactivateRagdoll()
+   {
+      if (_playerMovement)
+      {
+         _playerMovement.enabled = true;
+      }
+
+      if (_animator)
+      {
+         _animator.enabled = true;
+      }
+
+      if (_charController)
+      {
+         _charController.enabled = true;
+      }
+
+      foreach (Rigidbody rb in _rigidbodies)
+      {
+         rb.isKinematic = true;
+         //rb.AddForce(-this.transform.forward * 45, ForceMode.Impulse);
+      }
+
+      foreach (Collider col in _colliders)
+      {
+         col.enabled = false;
+      }
+   }
 }
