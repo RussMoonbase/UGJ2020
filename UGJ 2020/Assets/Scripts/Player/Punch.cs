@@ -5,6 +5,9 @@ using UnityEngine;
 public class Punch : MonoBehaviour
 {
    public bool isPunchReady = false;
+   public string enemyPlayerTag;
+
+   [SerializeField] private PlayerDamage _playerDamage; // loaded in Inspector
 
    // Start is called before the first frame update
    void Start()
@@ -21,9 +24,14 @@ public class Punch : MonoBehaviour
 
    private void OnTriggerEnter(Collider other)
    {
-      if (other.tag == "Player" && isPunchReady)
+      if (other.tag == enemyPlayerTag && isPunchReady)
       {
-         other.attachedRigidbody.AddForce(Camera.main.transform.forward * 35, ForceMode.Impulse);
+         Debug.Log("TRUE");
+
+         if (other.GetComponent<PlayerDamage>())
+         {
+            other.GetComponent<PlayerDamage>().ActivateRagdoll();
+         }
       }
       
    }

@@ -21,8 +21,6 @@ public class PlayerAttack : MonoBehaviour
    // Update is called once per frame
    void Update()
    {
-      Debug.Log("Hit Level = " + _hitLevel);
-
       if (Input.GetButton(punchButtonString))
       {
          _isPunchButtonPressed = true;
@@ -45,12 +43,14 @@ public class PlayerAttack : MonoBehaviour
       if (_isPunchButtonPressed)
       {
          _hitLevel += hitLevelIncreaseSpeed;
+         _animator.SetFloat("HitLevel", _hitLevel);
       }
       else
       {
          if (_hitLevel > 0.1f)
          {
             _hitLevel -= (hitLevelIncreaseSpeed / 2);
+            _animator.SetFloat("HitLevel", _hitLevel);
          }
       }
    }
@@ -58,8 +58,7 @@ public class PlayerAttack : MonoBehaviour
    private void Attack()
    {
       _hitLevel = 0f;
+      _animator.SetFloat("HitLevel", _hitLevel);
       _animator.SetTrigger("Punch");
-
-      Debug.Log("Hit Level = " + _hitLevel);
    }
 }
