@@ -32,8 +32,6 @@ public class PlayerMovement : MonoBehaviour
       _horizontalInput = Input.GetAxisRaw(_horizontalInputString);
       _rightStickHorInput = Input.GetAxisRaw(_rightStickHorInputString);
 
-      inputVector = new Vector3(_horizontalInput, 0f, _verticalInput);
-
       Movement();
       Turning();
       UpdateAnimations();
@@ -49,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
       }
 
       moveVector = moveVector * moveSpeed;
+      moveVector.y += Physics.gravity.y * Time.deltaTime;
       _charController.Move(moveVector * Time.deltaTime);
    }
 

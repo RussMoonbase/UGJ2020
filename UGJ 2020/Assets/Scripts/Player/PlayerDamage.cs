@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerDamage : MonoBehaviour
 {
    public bool testbool = false;
+   public Rigidbody headRB;
 
    private Rigidbody[] _rigidbodies;
    [SerializeField] private Collider[] _colliders;
@@ -49,11 +50,18 @@ public class PlayerDamage : MonoBehaviour
       foreach (Rigidbody rb in _rigidbodies)
       {
          rb.isKinematic = false;
+         rb.AddForce(-this.transform.forward * 45, ForceMode.Impulse);
       }
 
       foreach (Collider col in _colliders)
       {
          col.enabled = true;
+      }
+
+      if (headRB)
+      {
+         //headRB.AddForce(this.transform.up * 15, ForceMode.Impulse);
+         headRB.AddForce(-this.transform.forward * 55, ForceMode.Impulse);
       }
    }
 

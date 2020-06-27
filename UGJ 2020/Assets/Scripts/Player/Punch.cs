@@ -6,9 +6,7 @@ public class Punch : MonoBehaviour
 {
    public bool isPunchReady = false;
    public string enemyPlayerTag;
-
-   [SerializeField] private PlayerDamage _playerDamage; // loaded in Inspector
-
+ 
    // Start is called before the first frame update
    void Start()
    {
