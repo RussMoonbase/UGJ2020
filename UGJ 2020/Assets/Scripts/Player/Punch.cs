@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Punch : MonoBehaviour
 {
+   public bool isPunchReady = false;
+
    // Start is called before the first frame update
    void Start()
    {
@@ -15,5 +17,14 @@ public class Punch : MonoBehaviour
    void Update()
    {
 
+   }
+
+   private void OnTriggerEnter(Collider other)
+   {
+      if (other.tag == "Player" && isPunchReady)
+      {
+         other.attachedRigidbody.AddForce(Camera.main.transform.forward * 35, ForceMode.Impulse);
+      }
+      
    }
 }
