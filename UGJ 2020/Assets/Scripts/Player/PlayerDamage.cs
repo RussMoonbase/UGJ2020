@@ -24,10 +24,7 @@ public class PlayerDamage : MonoBehaviour
    // Update is called once per frame
    void Update()
    {
-      if (testbool)
-      {
-         ActivateRagdoll();
-      }
+
    }
 
    public void ActivateRagdoll()
@@ -57,16 +54,26 @@ public class PlayerDamage : MonoBehaviour
       {
          col.enabled = true;
       }
-
-      if (headRB)
-      {
-         //headRB.AddForce(this.transform.up * 15, ForceMode.Impulse);
-         headRB.AddForce(-this.transform.forward * 55, ForceMode.Impulse);
-      }
    }
 
    public void DeactivateRagdoll()
    {
+      foreach (Rigidbody rb in _rigidbodies)
+      {
+         rb.isKinematic = true;
+         //rb.AddForce(-this.transform.forward * 45, ForceMode.Impulse);
+      }
+
+      foreach (Collider col in _colliders)
+      {
+
+         if (col.gameObject.name != "mixamorig:RightHand")
+         {
+            col.enabled = false;
+         }
+
+      }
+
       if (_playerMovement)
       {
          _playerMovement.enabled = true;
@@ -80,17 +87,6 @@ public class PlayerDamage : MonoBehaviour
       if (_charController)
       {
          _charController.enabled = true;
-      }
-
-      foreach (Rigidbody rb in _rigidbodies)
-      {
-         rb.isKinematic = true;
-         //rb.AddForce(-this.transform.forward * 45, ForceMode.Impulse);
-      }
-
-      foreach (Collider col in _colliders)
-      {
-         col.enabled = false;
       }
    }
 }

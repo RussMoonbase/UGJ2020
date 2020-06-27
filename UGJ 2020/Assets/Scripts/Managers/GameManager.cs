@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+   public GameObject player2Prefab;
+
    public static GameManager instance;
    public GameObject player1;
    public GameObject player2;
    public Vector3 player1RespawnPosition;
    public Vector3 player2RespawnPosition;
+   public Quaternion player2RespawnRotation;
+
+   public CameraLogic player1CameraLogic;
+   public CameraLogic player2CameraLogic;
 
    public bool TestBool = false;
 
+   private GameObject _player1SpawnedObj;
+   private GameObject _player2SpawnedObj;
 
    private void Awake()
    {
-      if (instance == null)
-      {
-         instance = this;
-      }
+      instance = this;
    }
 
    // Start is called before the first frame update
@@ -26,15 +31,13 @@ public class GameManager : MonoBehaviour
    {
       player1RespawnPosition = player1.transform.position;
       player2RespawnPosition = player2.transform.position;
+      player2RespawnRotation = player2.transform.rotation;
    }
 
    // Update is called once per frame
    void Update()
    {
-      if (TestBool)
-      {
-         Respawn();
-      }
+
    }
 
    public void Respawn()
@@ -44,17 +47,18 @@ public class GameManager : MonoBehaviour
 
    private IEnumerator RespawnCoroutine()
    {
-      player1.SetActive(false);
-      player2.SetActive(false);
+      UIManager.instance.fadeToColor = true;
+      player2CameraLogic.cineBrain.enabled = false;
 
       yield return new WaitForSeconds(2f);
 
-      player1.SetActive(true);
-      player2.SetActive(true);
-      player1.GetComponent<PlayerDamage>().DeactivateRagdoll();
-      player2.GetComponent<PlayerDamage>().DeactivateRagdoll();
+      _player2SpawnedObj = Instantiate(player2Prefab, player2RespawnPosition, player2RespawnRotation);
+      player2CameraLogic.UpdateVirtualCamFollow(_player2SpawnedObj.GetComponent<PlayerCamTarget>().GetCamTarget());
+      player2CameraLogic.cineBrain.enabled = true;
+
+
       player1.transform.position = player1RespawnPosition;
-      player2.transform.position = player2RespawnPosition;
+      UIManager.instance.fadeToClear = true;
 
    }
 }
