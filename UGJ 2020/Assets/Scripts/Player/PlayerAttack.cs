@@ -30,13 +30,11 @@ public class PlayerAttack : MonoBehaviour
 
       if (Input.GetButtonUp(punchButtonString))
       {
-         _isPunchButtonPressed = false;  
-
          if (_hitLevel >= _hitLevelMax)
          {
-
             Attack();
          }
+         _isPunchButtonPressed = false;
       }
 
       PressingPunchButton();
@@ -59,8 +57,9 @@ public class PlayerAttack : MonoBehaviour
 
    private void Attack()
    {
-      _animator.SetTrigger("Punch");
       _hitLevel = 0f;
-      
+      _animator.SetTrigger("Punch");
+
+      Debug.Log("Hit Level = " + _hitLevel);
    }
 }
