@@ -22,7 +22,7 @@ public class RingOut : MonoBehaviour
       {
          Debug.Log("Player1 RING OUT!");
          GameManager.instance.player2Score += 1;
-         UIManager.instance.UpdatePlayer2Score(GameManager.instance.player1Score);
+         UIManager.instance.UpdatePlayer2Score(GameManager.instance.player2Score);
       }
 
       if (other.tag == "Player2")

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour
 {
+   public static PlayerDamage instance;
+
    public bool testbool = false;
    public Rigidbody headRB;
 
@@ -14,6 +16,11 @@ public class PlayerDamage : MonoBehaviour
    [SerializeField] private Animator _animator;
    [SerializeField] private CharacterController _charController;
    [SerializeField] private PlayerMovement _playerMovement;
+
+   private void Awake()
+   {
+      instance = this;
+   }
 
    // Start is called before the first frame update
    void Start()
