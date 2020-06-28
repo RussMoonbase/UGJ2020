@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
    public CameraLogic player1CameraLogic;
    public CameraLogic player2CameraLogic;
 
-   public bool TestBool = false;
+   public bool player1Respawned = false;
+   public bool player2Respawned = false;
 
    private GameObject _player1SpawnedObj;
    private GameObject _player2SpawnedObj;
@@ -52,7 +53,12 @@ public class GameManager : MonoBehaviour
 
       yield return new WaitForSeconds(2f);
 
-      _player2SpawnedObj = Instantiate(player2Prefab, player2RespawnPosition, player2RespawnRotation);
+      if (!player2Respawned)
+      {
+         _player2SpawnedObj = Instantiate(player2Prefab, player2RespawnPosition, player2RespawnRotation);
+         player2Respawned = true;
+      }
+      
       player2CameraLogic.UpdateVirtualCamFollow(_player2SpawnedObj.GetComponent<PlayerCamTarget>().GetCamTarget());
       player2CameraLogic.cineBrain.enabled = true;
 
