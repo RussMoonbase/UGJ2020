@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+   public int player1Score = 0;
+   public int player2Score = 0;
+
+
    public GameObject player2Prefab;
 
    public static GameManager instance;

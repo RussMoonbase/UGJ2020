@@ -24,8 +24,6 @@ public class Punch : MonoBehaviour
    {
       if (other.tag == enemyPlayerTag && isPunchReady)
       {
-         Debug.Log("other collider name is " + other.name);
-
          if (other.GetComponent<PlayerDamage>())
          {
             other.GetComponent<PlayerDamage>().ActivateRagdoll();
