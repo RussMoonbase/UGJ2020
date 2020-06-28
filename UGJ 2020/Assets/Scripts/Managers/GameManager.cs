@@ -111,6 +111,7 @@ public class GameManager : MonoBehaviour
 
    private IEnumerator LoadWinningScene(int index)
    {
+      MusicManager.instance.gameFinished = true;
       yield return new WaitForSeconds(2.0f);
       SceneLoader.instance.LoadSceneNumber(index);
    }

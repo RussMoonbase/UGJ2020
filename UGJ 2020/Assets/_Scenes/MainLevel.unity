@@ -1187,7 +1187,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 106e59e7bf89e446c949c85924ac0435, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.316
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1757,7 +1757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1089572844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1954,7 +1954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2233,6 +2233,7 @@ GameObject:
   - component: {fileID: 1849519943}
   - component: {fileID: 1849519944}
   - component: {fileID: 1849519945}
+  - component: {fileID: 1849519946}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2312,6 +2313,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057147491f8dd324fa0df2a418ec1712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1849519946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849519941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c8516bf20d0e67468b896c2328ff7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSourceMusic: {fileID: 808484249}
+  turnDownSpeed: 0.1
+  gameFinished: 0
 --- !u!1001 &318472336363671163
 PrefabInstance:
   m_ObjectHideFlags: 0
