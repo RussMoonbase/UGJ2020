@@ -1279,10 +1279,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2125,22 +2125,22 @@ PrefabInstance:
     - target: {fileID: 5641519424016266548, guid: a9c510ca53fe4f14da1e93012baa94c5,
         type: 3}
       propertyPath: m_Radius
-      value: 0.71476257
+      value: 0.42
       objectReference: {fileID: 0}
     - target: {fileID: 5641519424016266548, guid: a9c510ca53fe4f14da1e93012baa94c5,
         type: 3}
       propertyPath: m_Center.x
-      value: 0.000000012905421
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5641519424016266548, guid: a9c510ca53fe4f14da1e93012baa94c5,
         type: 3}
       propertyPath: m_Center.y
-      value: 0.6347615
+      value: 0.57
       objectReference: {fileID: 0}
     - target: {fileID: 5641519424016266548, guid: a9c510ca53fe4f14da1e93012baa94c5,
         type: 3}
       propertyPath: m_Center.z
-      value: 0.00000012224349
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7095979452704066842, guid: a9c510ca53fe4f14da1e93012baa94c5,
         type: 3}
