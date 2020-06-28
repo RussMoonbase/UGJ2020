@@ -27,7 +27,7 @@ public class Punch : MonoBehaviour
          Debug.Log("Hit = " + other.name);
          if (other.GetComponent<PlayerDamage>())
          {
-            other.GetComponent<PlayerDamage>().ActivateRagdoll();
+            other.GetComponent<PlayerDamage>().ActivateRagdoll(true);
          }
       }
       

@@ -21,12 +21,26 @@ public class PlayerAttack : MonoBehaviour
    // Update is called once per frame
    void Update()
    {
-      if (Input.GetButton(punchButtonString))
+      //if (Input.GetButton(punchButtonString))
+      //{
+      //   _isPunchButtonPressed = true;
+      //}
+
+      //if (Input.GetButtonUp(punchButtonString))
+      //{
+      //   if (_hitLevel >= _hitLevelMax)
+      //   {
+      //      Attack();
+      //   }
+      //   _isPunchButtonPressed = false;
+      //}
+
+      if (Input.GetAxis(punchButtonString) == 1)
       {
          _isPunchButtonPressed = true;
       }
 
-      if (Input.GetButtonUp(punchButtonString))
+      if (Input.GetAxis(punchButtonString) < 1)
       {
          if (_hitLevel >= _hitLevelMax)
          {

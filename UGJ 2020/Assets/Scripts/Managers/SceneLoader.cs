@@ -31,8 +31,8 @@ public class SceneLoader : MonoBehaviour
       SceneManager.LoadScene(sceneNum);
    }
 
-   public void LoadMainMenu()
+   public void LoadSceneNumber(int num)
    {
-      SceneManager.LoadScene(0);
+      SceneManager.LoadScene(num);
    }
 }

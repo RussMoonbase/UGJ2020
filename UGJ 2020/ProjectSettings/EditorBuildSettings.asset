@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/MainLevel.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/_Scenes/Player1Wins.unity
+    guid: 5dcda6f95860a8e458f1164f338769db
+  - enabled: 1
+    path: Assets/_Scenes/Player2Wins.unity
+    guid: 0bef55da30b758543a3c28a6824fb58a
   m_configObjects: {}

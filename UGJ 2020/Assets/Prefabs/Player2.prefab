@@ -102,8 +102,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.26
-  m_Center: {x: 0, y: 0.18, z: 0}
+  m_Radius: 0.66
+  m_Center: {x: 0, y: 0.57, z: 0}
 --- !u!114 &3977048577680637623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,8 +429,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b55007f3a6252045afe1508c394af95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  punchButtonString: Punch_P2
-  hitLevelIncreaseSpeed: 0.2
+  punchButtonString: Right Stick_P2
+  hitLevelIncreaseSpeed: 0.03
   _animator: {fileID: 7095979452704066842}
   _hitLevelMax: 10
 --- !u!114 &318472336377677942
@@ -445,6 +445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44844e404b8f5224dbffc446ccd41025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1Cam: {fileID: 0}
+  player2Cam: {fileID: 0}
+  _opponentCam: {fileID: 0}
   testbool: 0
   headRB: {fileID: 318472337796150032}
   _colliders:
@@ -463,6 +466,7 @@ MonoBehaviour:
   _animator: {fileID: 7095979452704066842}
   _charController: {fileID: 3680406397898686058}
   _playerMovement: {fileID: 3680406397898686059}
+  playerWalkedOutRing: 0
 --- !u!114 &3996978726375895060
 MonoBehaviour:
   m_ObjectHideFlags: 0

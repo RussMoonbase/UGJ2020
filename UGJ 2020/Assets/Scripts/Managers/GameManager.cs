@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
    // Update is called once per frame
    void Update()
    {
-
+      CheckForWinner();
    }
 
    public void Respawn()
@@ -94,5 +94,24 @@ public class GameManager : MonoBehaviour
       yield return new WaitForSeconds(4f);
       player1Respawned = false;
       player2Respawned = false;
+   }
+
+   private void CheckForWinner()
+   {
+      if (player1Score >= 3)
+      {
+         StartCoroutine(LoadWinningScene(2));
+      }
+
+      if (player2Score >= 3)
+      {
+         StartCoroutine(LoadWinningScene(3));
+      }
+   }
+
+   private IEnumerator LoadWinningScene(int index)
+   {
+      yield return new WaitForSeconds(2.0f);
+      SceneLoader.instance.LoadSceneNumber(index);
    }
 }

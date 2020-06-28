@@ -20,14 +20,38 @@ public class RingOut : MonoBehaviour
    {
       if (other.tag == "Player1")
       {
-         Debug.Log("Player1 RING OUT!");
+         PlayerDamage pDamage = other.GetComponent<PlayerDamage>();
+
+         if (pDamage)
+         {
+            bool playerOutOfRing = pDamage.playerWalkedOutRing;
+
+            if (!playerOutOfRing)
+            {
+               pDamage.ActivateRagdoll(false);
+            }
+         }
+         
+         //Debug.Log("Player1 RING OUT!");
          GameManager.instance.player2Score += 1;
          UIManager.instance.UpdatePlayer2Score(GameManager.instance.player2Score);
       }
 
       if (other.tag == "Player2")
       {
-         Debug.Log("Player2 RING OUT!");
+         PlayerDamage pDamage = other.GetComponent<PlayerDamage>();
+
+         if (pDamage)
+         {
+            bool playerOutOfRing = pDamage.playerWalkedOutRing;
+
+            if (!playerOutOfRing)
+            {
+               pDamage.ActivateRagdoll(false);
+            }
+         }
+
+         //Debug.Log("Player2 RING OUT!");
          GameManager.instance.player1Score += 1;
          UIManager.instance.UpdatePlayer1Score(GameManager.instance.player1Score);
       }

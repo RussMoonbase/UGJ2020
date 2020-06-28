@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour
 {
+   public GameObject player1Cam;
+   public GameObject player2Cam;
+   [SerializeField] private GameObject _opponentCam;
+
    public static PlayerDamage instance;
 
    public bool testbool = false;
@@ -17,6 +21,8 @@ public class PlayerDamage : MonoBehaviour
    [SerializeField] private CharacterController _charController;
    [SerializeField] private PlayerMovement _playerMovement;
 
+   public bool playerWalkedOutRing = false;
+
    private void Awake()
    {
       instance = this;
@@ -25,7 +31,22 @@ public class PlayerDamage : MonoBehaviour
    // Start is called before the first frame update
    void Start()
    {
+      player1Cam = GameObject.Find("/Player1 Cam");
+      player1Cam = GameObject.Find("/Player2 Cam");
+
+
+      if (this.gameObject.tag == "Player 1")
+      {
+         _opponentCam = player2Cam;
+      }
+
+      if (this.gameObject.tag == "Player2")
+      {
+         _opponentCam = player1Cam;
+      }
+
       _rigidbodies = GetComponentsInChildren<Rigidbody>();
+      playerWalkedOutRing = false; 
    }
 
    // Update is called once per frame
@@ -34,8 +55,10 @@ public class PlayerDamage : MonoBehaviour
 
    }
 
-   public void ActivateRagdoll()
+   public void ActivateRagdoll(bool forceNeeded)
    {
+      playerWalkedOutRing = true;
+
       if (_playerMovement)
       {
          _playerMovement.enabled = false;
@@ -54,7 +77,19 @@ public class PlayerDamage : MonoBehaviour
       foreach (Rigidbody rb in _rigidbodies)
       {
          rb.isKinematic = false;
-         rb.AddForce(-this.transform.forward * 45, ForceMode.Impulse);
+
+         if (forceNeeded)
+         {
+            if (_opponentCam)
+            {
+               rb.AddForce(-_opponentCam.transform.forward * 45, ForceMode.Impulse);
+            }
+            else
+            {
+               rb.AddForce(-this.transform.forward * 45, ForceMode.Impulse);
+            }
+            
+         }     
       }
 
       foreach (Collider col in _colliders)
