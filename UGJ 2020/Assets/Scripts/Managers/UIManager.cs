@@ -108,8 +108,9 @@ public class UIManager : MonoBehaviour
 
    private void FadeScreenToColor()
    {
-      _screenImage.color = new Color(_screenImage.color.r, _screenImage.color.g, _screenImage.color.b,
-         Mathf.MoveTowards(_screenImage.color.a, 1f, _fadeSpeed * Time.deltaTime));
+      Color newImageColor = _screenImage.color;
+      newImageColor.a = Mathf.MoveTowards(_screenImage.color.a, 1f, _fadeSpeed * Time.deltaTime);
+      _screenImage.color = newImageColor;
 
       if (_screenImage.color.a == 1f)
       {
@@ -119,8 +120,9 @@ public class UIManager : MonoBehaviour
 
    private void FadeScreenToClear()
    {
-      _screenImage.color = new Color(_screenImage.color.r, _screenImage.color.g, _screenImage.color.b,
-   Mathf.MoveTowards(_screenImage.color.a, 0f, _fadeSpeed * Time.deltaTime));
+      Color newImageColor = _screenImage.color;
+      newImageColor.a = Mathf.MoveTowards(_screenImage.color.a, 0f, _fadeSpeed * Time.deltaTime);
+      _screenImage.color = newImageColor;
 
       if (_screenImage.color.a == 0f)
       {

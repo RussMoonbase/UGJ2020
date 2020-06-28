@@ -436,7 +436,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "HOLDIN' IT \nDOWN"
+  m_text: "HOLD IT \nDOWN NOW"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca930ead62ba46e4eaf4836832a824bc, type: 2}
   m_sharedMaterial: {fileID: 6040323009066449115, guid: ca930ead62ba46e4eaf4836832a824bc,
@@ -465,8 +465,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 350
-  m_fontSizeBase: 350
+  m_fontSize: 400
+  m_fontSizeBase: 400
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -506,10 +506,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 429439592}
-    characterCount: 16
+    characterCount: 17
     spriteCount: 0
-    spaceCount: 3
-    wordCount: 3
+    spaceCount: 4
+    wordCount: 4
     linkCount: 0
     lineCount: 2
     pageCount: 1
